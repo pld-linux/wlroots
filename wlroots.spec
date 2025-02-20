@@ -29,7 +29,7 @@ BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja
 BuildRequires:	pixman-devel >= 0.42.0
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	udev-devel
 BuildRequires:	wayland-devel >= 1.22
 BuildRequires:	wayland-protocols >= 1.32
@@ -134,16 +134,16 @@ Statyczna biblioteka wlroots.
 %patch -P0 -p1
 
 %build
-%meson build \
+%meson \
 	%{!?with_static_libs:--default-library=shared} \
 	-Dexamples=false \
 	-Dxwayland=enabled
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%ninja_install -C build
+%meson_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
