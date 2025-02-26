@@ -6,7 +6,7 @@ Summary:	A modular Wayland compositor library
 Summary(pl.UTF-8):	Modularna biblioteka kompozytora Wayland
 Name:		wlroots
 Version:	0.17.4
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/%{version}/downloads/%{name}-%{version}.tar.gz
